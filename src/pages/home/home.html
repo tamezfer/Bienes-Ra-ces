@@ -1,14 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>Bienes Raíces®</ion-title>
+    <ion-buttons end>
+      <button (click)= "clickFav()" ion-button icon-only color="royal">
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding style = "background-color:cornflowerblue">
+  <ion-card style= "border-radius: 10px" *ngFor= "let c of casas">
+    <img [src] = c.img (click)= "clickInfo(c)">
+    <ion-card-content>
+      <ion-card-title>
+         Casa en {{c.colonia}}
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
